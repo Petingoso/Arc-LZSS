@@ -24,21 +24,21 @@ while (readfile!= NULL){
 		token = tokenize_match(match)
 		write token
 	else
-		write window
+		write token
 
-advance_window(token[length])
-advance_buffer(token[lenght]) 
 	}
 }
 
-search_match{
+search_match(search_buffer,window){
 char longest = NULL;
 char match;
 
 for char in window
-	is in buffer?
+	is in search_buffer?
 		yes ->match = char+match
 		no -> exit 
+update_search_buffer(char,search_buffer)
+advance_window(token[length])
 
 if sizeof(match) > longest
 	longest = match 
@@ -48,4 +48,28 @@ if longest
 
 else 
 	return NULL 
+}
+
+tokenize_match(match){
+char limit;
+char token;
+
+token = limit+match+limit 
+
+if match < token 
+	return match 
+
+else 
+	return token
+}
+
+update_search_buffer(char,search_buffer){
+search_buffer = search_buffer + char
+}
+
+advance_window(search_buffer,window){
+if window < search_buffer
+	window = window + sizeof(window - search_buffer)
+else
+	exit
 }
