@@ -13,11 +13,10 @@ main{
 char* search_buffer;
 char* window;
 
-openfile()
-readfile()
+openfile(file)
 
 while (readfile!= NULL){
-	window = readfile(sizeof(window))
+	window = readfile(file, sizeof(window))
 
 	match = search_match(window,search_buffer)
 
@@ -30,4 +29,23 @@ while (readfile!= NULL){
 advance_window(token[length])
 advance_buffer(token[lenght]) 
 	}
+}
+
+search_match{
+char longest = NULL;
+char match;
+
+for char in window
+	is in buffer?
+		yes ->match = char+match
+		no -> exit 
+
+if sizeof(match) > longest
+	longest = match 
+
+if longest 
+	return match
+
+else 
+	return NULL 
 }
