@@ -1,0 +1,33 @@
+# LZSS pseudo code
+
+- Loop char by char
+
+- check for match 
+	- if yes check next char and prepare token
+		- if its useless dont substitute
+ 		- add to search buffer 
+
+	- else add to search buffer and continue
+
+main{
+char* search_buffer;
+char* window;
+
+openfile()
+readfile()
+
+while (readfile!= NULL){
+	window = readfile(sizeof(window))
+
+	match = search_match(window,search_buffer)
+
+	if (match)
+		token = tokenize_match(match)
+		write token
+	else
+		write window
+
+advance_window(token[length])
+advance_buffer(token[lenght]) 
+	}
+}
